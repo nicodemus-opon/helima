@@ -49,7 +49,9 @@ def full_ops():
     z=input('ready...')
 
     while True:
-        time.sleep(2)
+        time.sleep(1)
+        input_text_box = browser.find_element_by_name('capcha')
+        
         first_element=browser.find_element_by_xpath('//div[@id="cimg1"]//img[@src]')#2292
         first_element_attribute=first_element.get_attribute("src")
         num_1=clean_element(first_element_attribute)
@@ -73,7 +75,7 @@ def full_ops():
         full_nums=str(num_1)+str(num_2)+str(num_3)+str(num_4)
         input_text_box.send_keys(int(full_nums))
         input_text_box.send_keys(u'\ue007')
-        print('current amount is',amounter.text)
+        print('complted cycle')
         
     print('uh ooh')
 
